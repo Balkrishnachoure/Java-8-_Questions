@@ -6,3 +6,14 @@ Important Methods :
             Where, identity is initial value 
             of type T and accumulator is a 
             function for combining two values.
+
+
+
+3  Methods in :
+   a.Predicate  - test(T t) 
+   b.Consumer - 	accept(T t)
+   c.Supplier - T get()
+   d.Function -  R apply(T t) , 
+                 default <V> Function<V, R> andThen(Function<? super R, ? extends V> after) ,
+                 default <V> Function<V, R> compose(Function<? super V, ? extends T> before) ,
+                 static <T> Function<T, T> identity()
