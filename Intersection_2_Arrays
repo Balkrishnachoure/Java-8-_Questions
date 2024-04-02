@@ -26,9 +26,6 @@ Class Demo
                 .filter(set1::contains)
                 .collect(Collectors.toSet());
 
-
-
-
   }
 
 
