@@ -12,7 +12,7 @@ General Questions Java 8  :
 10.Develop a program to perform matrix multiplication using Java 8 streams.
 
 
-Question on Predicate : 
+Questions on Predicate : 
 1.Write a Java 8 program to check if a given string is a palindrome using predicates.
 2.Implement a Java 8 program to find all prime numbers in a given range using predicates.
 3.Create a Java 8 program to filter a list of strings based on a given predicate condition (e.g., string length greater than 5).
