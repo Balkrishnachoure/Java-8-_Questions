@@ -1,1 +1,8 @@
 
+Important Methods : 
+
+1. reduce() : Reducing is the repeated process of combining all elements.
+   Note : T reduce(T identity, BinaryOperator<T> accumulator);
+            Where, identity is initial value 
+            of type T and accumulator is a 
+            function for combining two values.
