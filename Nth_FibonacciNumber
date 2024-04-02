@@ -1,1 +1,44 @@
 
+Class Demo 
+{
+   Public static void main(String [] args) 
+   {
+    int n = 10 ;
+    // Approach 1 : Using stream.iterate() :
+    System.out.println(nthFibonacci(n)) ;
+
+   //  Approach :2 Using Stream.generate() :
+   System.out.println(nthFibonacciSolution2(n)) ;
+  
+
+   }
+    public static long nthFibonacci(int n) {
+        return Stream.iterate(new long[]{0, 1}, fib -> new long[]{fib[1], fib[0] + fib[1]})
+                .limit(n)
+                .reduce((a, b) -> b)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid input"));
+    }
+
+    public static long nthFibonacciSolution2(int n) {
+        return Stream.generate(new Supplier<long[]>() {
+            long a = 0;
+            long b = 1;
+
+            @Override
+            public long[] get() {
+                long[] fib = new long[]{a};
+                long temp = a;
+                a = b;
+                b = temp + b;
+                return fib;
+            }
+        })
+        .mapToLong(fib -> fib[0])
+        .limit(n)
+        .reduce((a, b) -> b)
+        .orElseThrow(() -> new IllegalArgumentException("Invalid input"));
+    }
+
+
+
+}
