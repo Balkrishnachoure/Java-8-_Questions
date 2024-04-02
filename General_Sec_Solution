@@ -1,1 +1,36 @@
 
+
+Class Demo 
+{
+   public static void main(String [] args) 
+  {
+
+// Intersection of Two Arrays : 
+ Integer[] array1 = {1, 2, 3, 4, 5};
+        Integer[] array2 = {3, 4, 5, 6, 7};
+
+        // Approach 1: Using Streams and filter
+        Integer[] intersection = Arrays.stream(array1)
+                .filter(Arrays.asList(array2)::contains)
+                .toArray(Integer[]::new);
+        // Approach 2: Using Streams and collect with Set
+        Set<Integer> set1 = new HashSet<>(Arrays.asList(array1));
+        Integer[] intersection = Arrays.stream(array2)
+                .filter(set1::contains)
+                .toArray(Integer[]::new);
+
+        // Approach 3: Using Streams and collect with intersection
+        Set<Integer> set1 = Arrays.stream(array1).collect(Collectors.toSet());
+        Set<Integer> intersection = Arrays.stream(array2)
+                .filter(set1::contains)
+                .collect(Collectors.toSet());
+
+
+
+
+  }
+
+
+
+}
+
