@@ -9,7 +9,7 @@ Important Methods :
 
 
 
-3  Methods in :
+3.  Methods in :
    a.Predicate  - test(T t) 
    b.Consumer - 	accept(T t)
    c.Supplier - T get()
@@ -17,3 +17,9 @@ Important Methods :
                  default <V> Function<V, R> andThen(Function<? super R, ? extends V> after) ,
                  default <V> Function<V, R> compose(Function<? super V, ? extends T> before) ,
                  static <T> Function<T, T> identity()
+
+4. limit() - is a short-circuiting operation.
+     Eg : Stream.iterate(0, i -> i + 1)
+           .filter(i -> i % 2 == 0)
+            .limit(10)
+              .forEach(System.out::println);
