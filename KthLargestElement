@@ -3,8 +3,14 @@ Class Demo
    public static void main(String [] args)
     {
 
-
+     int[] nums = {3, 1, 4, 2, 5};
+        int k = 2;
+        System.out.println("The " + k + "th largest element is: " + findKthLargestSol1(nums, k));
 
     }
+
+
+
+
 }
 
