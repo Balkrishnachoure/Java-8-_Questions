@@ -38,3 +38,4 @@ Important Methods :
                               System.out.println("Value in OptionalInt = "+ opInt.getAsInt()); // java.util.NoSuchElementException
                               } catch (Exception e) {  System.out.println("Exception: " + e);  } 
 
+7. ifPresentOrElse() : It is the method of java.util.optional class .
