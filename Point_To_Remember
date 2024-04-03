@@ -54,3 +54,14 @@ Important Methods :
         try {   op.ifPresentOrElse(  (value) -> { System.out.println( "Value is present, its: "+ value); }, 
                 ()  -> { System.out.println("Value is empty"); });   //  output : Value is empty
         }  catch (Exception e) { System.out.println(e); } 
+
+
+8 . Intstream.iterate()  : Introduce in java 8 and Changes made in Java 9 .
+     1. static IntStream iterate(int seed, IntUnaryOperator f) - In Java 8 this was introduce .
+       Where : seed - the initial element
+               f - a function to be applied to the previous element to produce a new element
+      2. static IntStream	iterate​(int seed, IntPredicate hasNext, IntUnaryOperator next) -  In Java 9 .
+         Where seed - the initial element
+               hasNext - a predicate to apply to elements to determine when the stream must terminate.
+               next - a function to be applied to the previous element to produce a new element
+        Eg :  Stream.iterate(0, i -> i <= 100, i -> 3 + i).forEach(i -> System.out.printf("%d,", i));
