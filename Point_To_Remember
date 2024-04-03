@@ -10,8 +10,8 @@ Important Methods :
 
 
 3.  Methods in :
-   a.Predicate  - test(T t) 
-   b.Consumer - 	accept(T t)
+   a.Predicate - test(T t) 
+   b.Consumer - accept(T t)
    c.Supplier - T get()
    d.Function -  R apply(T t) , 
                  default <V> Function<V, R> andThen(Function<? super R, ? extends V> after) ,
@@ -23,3 +23,6 @@ Important Methods :
            .filter(i -> i % 2 == 0)
             .limit(10)
               .forEach(System.out::println);
+5. boxed() : Stream<Integer> boxed()
+            It is an Intermidiate Operation .It is Lazy  .
+            It wraps primitive types to into an object .
