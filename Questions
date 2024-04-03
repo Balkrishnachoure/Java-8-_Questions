@@ -10,6 +10,7 @@ General Questions Java 8  :
 8.Write a Java 8 program to rotate an array by a given number of positions.
 9.Implement a method to find the longest substring without repeating characters in a given string using Java 8 streams.
 10.Develop a program to perform matrix multiplication using Java 8 streams.
+11.Sort the array in descending and Ascending order  using Comparator in Java 8 streams .
 
 
 Questions on Predicate : 
