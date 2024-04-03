@@ -43,4 +43,14 @@ Important Methods :
     It can be used only on the values of Optional Object . If the value is not present in Optional then the method performs the given 
     empty based Runnable Empty Action .
     public void ifPresentOrElse(Consumer<T> action, Runnable emptyAction) .
-                                       
+    Eg 1:  
+        Optional<Integer> op = Optional.of(9455); 
+        System.out.println("Optional: " + op); 
+        op.ifPresentOrElse( (value) -> { System.out.println( "Value is present, its: "+ value); }, // output :  9455
+            () -> { System.out.println("Value is empty"); }); 
+   Eg 2:   
+        Optional<Integer> op = Optional.empty(); 
+        System.out.println("Optional: " + op);
+        try {   op.ifPresentOrElse(  (value) -> { System.out.println( "Value is present, its: "+ value); }, 
+                ()  -> { System.out.println("Value is empty"); });   //  output : Value is empty
+        }  catch (Exception e) { System.out.println(e); } 
