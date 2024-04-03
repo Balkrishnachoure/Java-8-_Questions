@@ -6,7 +6,17 @@ Class Demo
      int[] nums = {3, 1, 4, 2, 5};
         int k = 2;
         System.out.println("The " + k + "th largest element is: " + findKthLargestSol1(nums, k));
+        System.out.println("The " + k + "th largest element is: " + findKthLargestSol2(nums, k));
 
+    }
+//By Sorting :
+ public static int findKthLargestSol1(int[] nums, int k) {
+        return Arrays.stream(nums)
+                .boxed()
+                .sorted((a, b) -> b - a) // Sorting in descending order
+                .skip(k - 1) // Skipping the first k - 1 elements 
+                .findFirst() 
+                .orElse(-1); // Default value if the array is empty or k is out of bounds
     }
 
 
