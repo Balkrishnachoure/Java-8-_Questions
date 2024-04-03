@@ -39,10 +39,10 @@ Important Methods :
                               } catch (Exception e) {  System.out.println("Exception: " + e);  } 
 
 7. ifPresentOrElse(Consumer,Runnable) : 
-    It is the method of java.util.optional class.
-    It can be used only on the values of Optional Object . If the value is not present in Optional then the method performs the given 
+    1.It is the method of java.util.optional class.
+    2.It can be used only on the values of Optional Object . If the value is not present in Optional then the method performs the given 
     empty based Runnable Empty Action .
-    public void ifPresentOrElse(Consumer<T> action, Runnable emptyAction) .
+    3.public void ifPresentOrElse(Consumer<T> action, Runnable emptyAction) .
     Eg 1:  
         Optional<Integer> op = Optional.of(9455); 
         System.out.println("Optional: " + op); 
