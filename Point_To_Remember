@@ -28,6 +28,7 @@ Important Methods :
             It wraps primitive types to into an object .
 
 6. OptionalInt : It is a container Object/class which may or may not contains a int value .
+                 Be carefull while using (== and  .equals()) in case of OptionalInt instance .
                  Eg: OptionalInt opInt = OptionalInt.of(45); 
                     System.out.println("OptionalInt: "+ opInt.toString());  //[45]
                     System.out.println("Value in OptionalInt = " + opInt.getAsInt());  // 45
