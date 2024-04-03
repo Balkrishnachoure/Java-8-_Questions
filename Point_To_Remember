@@ -32,13 +32,9 @@ Important Methods :
                  Eg: OptionalInt opInt = OptionalInt.of(45); 
                     System.out.println("OptionalInt: "+ opInt.toString());  //[45]
                     System.out.println("Value in OptionalInt = " + opInt.getAsInt());  // 45
-
                 Eg2 :    try { 
                               OptionalInt opInt = OptionalInt.empty(); 
                               System.out.println("OptionalInt:+ opInt.toString()); // OptionalInt.empty 
                               System.out.println("Value in OptionalInt = "+ opInt.getAsInt()); // java.util.NoSuchElementException
-                              } 
-                         catch (Exception e) { 
-                               System.out.println("Exception: " + e); 
-                                              } 
+                              } catch (Exception e) {  System.out.println("Exception: " + e);  } 
 
