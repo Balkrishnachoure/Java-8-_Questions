@@ -1,1 +1,42 @@
 
+class Demo 
+{
+
+  public static void main(String [] args)
+  {
+    String str = "Hello, world!";
+
+   // Solution:1 Using String Builder : 
+      String reversed = new StringBuilder(str)
+                            .chars()
+                            .mapToObj(c -> (char) c)
+                            .collect(Collectors.collectingAndThen(Collectors.toList(), list -> {
+                                Collections.reverse(list);
+                                return list.stream();
+                            }))
+                            .map(String::valueOf)
+                            .collect(Collectors.joining());
+        System.out.println("Reversed string: " + reversed);
+
+  // Solution :2 Using StringBuilder and reduce : 
+     String reversed = str.chars()
+                            .mapToObj(c -> (char) c)
+                            .reduce(new StringBuilder(), (sb, c) -> sb.insert(0, c), StringBuilder::append)
+                            .toString();
+        System.out.println("Reversed string: " + reversed);
+    }
+
+// Solution :3  Using IntStream.iterate() :
+   String reversed = IntStream.iterate(str.length() - 1, i -> i >= 0, i -> i - 1)
+                            .mapToObj(i -> str.charAt(i))
+                            .map(String::valueOf)
+                            .collect(Collectors.joining());
+        System.out.println("Reversed string: " + reversed);
+
+
+
+
+  }
+
+
+}
