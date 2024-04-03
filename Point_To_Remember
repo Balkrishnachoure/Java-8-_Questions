@@ -26,3 +26,18 @@ Important Methods :
 5. boxed() : Stream<Integer> boxed()
             It is an Intermidiate Operation .It is Lazy  .
             It wraps primitive types to into an object .
+
+6. OptionalInt : It is a container Object/class which may or may not contains a int value .
+                 Eg: OptionalInt opInt = OptionalInt.of(45); 
+                    System.out.println("OptionalInt: "+ opInt.toString());  //[45]
+                    System.out.println("Value in OptionalInt = " + opInt.getAsInt());  // 45
+
+                Eg2 :    try { 
+                              OptionalInt opInt = OptionalInt.empty(); 
+                              System.out.println("OptionalInt:+ opInt.toString()); // OptionalInt.empty 
+                              System.out.println("Value in OptionalInt = "+ opInt.getAsInt()); // java.util.NoSuchElementException
+                              } 
+                         catch (Exception e) { 
+                               System.out.println("Exception: " + e); 
+                                              } 
+
