@@ -7,9 +7,9 @@ Class Demo
         int k = 2;
         System.out.println("The " + k + "th largest element is: " + findKthLargestSol1(nums, k));
         System.out.println("The " + k + "th largest element is: " + findKthLargestSol2(nums, k));
-
+        System.out.println("The " + k + "th largest element is: " + findKthLargestSol3(nums, k));
     }
-//By Sorting :
+//By Sorting in Descending Order  :
  public static int findKthLargestSol1(int[] nums, int k) {
         return Arrays.stream(nums)
                 .boxed()
@@ -19,7 +19,26 @@ Class Demo
                 .orElse(-1); // Default value if the array is empty or k is out of bounds
     }
 
+// By Sorting in Ascending Order :
+public static int findKthLargestSol2(int[] nums, int k) {
+        return Arrays.stream(nums)
+                .sorted()
+                .skip(nums.length - k) // Skipping the first n-k elements, where n is the size of the array
+                .findFirst() 
+                .orElse(-1); // Default value if the array is empty or k is out of bounds
+    }
 
+//By using Priority Queue :
+public static int findKthLargestSol3(int[] nums, int k) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        for (int num : nums) {
+            pq.offer(num);
+            if (pq.size() > k) {
+                pq.poll(); // Removing the smallest element if the size of the PriorityQueue exceeds k
+            }
+        }
+        return pq.peek(); // Returning the kth largest element
+    }
 
 
 }
