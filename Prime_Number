@@ -1,1 +1,24 @@
 
+Class PrimeNumberG
+{
+   public static void main(String [] args) 
+  {
+        List<Integer> primes = generatePrimesStream(100);
+        System.out.println("Prime numbers up to 100: " + primes);
+  }
+
+ public static List<Integer> generatePrimesStream(int limit) {
+        return IntStream.rangeClosed(2, limit)
+                .filter(PrimeNumberG::isPrime)
+                .boxed()
+                .collect(Collectors.toList());
+    }
+
+ private static boolean isPrime(int number) {
+        if (number <= 1) return false;
+        return IntStream.rangeClosed(2, (int) Math.sqrt(number))
+                .noneMatch(i -> number % i == 0);
+    }
+
+
+}
