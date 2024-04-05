@@ -1,1 +1,30 @@
 
+Class PerfectSquare 
+{
+  public static void main(String [] args ) 
+  {  int number =16 ; 
+   if(isPerfectSquare(nummber)) {
+    System.out.println("Yes") ;
+   }else{
+     System.out.println("No") .
+   }
+  }
+
+//Solution 1 : Using IntStream.range :
+public static boolean isPerfectSquare(int number)
+{
+  return IntStream.rangeClosed(1,(int) Math.sqrt(number))
+         .anyMatch(x -> x*x==number) ;
+}
+
+//Solution 2 : Using Stream.iterate :
+public static boolean isPerfectSquare( int number) 
+{
+  return Stream.iterate( 1, n -> n<=number ,n -> n+1)
+               .filter(x -> x*x==number)
+               .findFirst()
+               .isPresent() ;
+  
+}
+
+}
