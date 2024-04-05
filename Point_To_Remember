@@ -68,3 +68,13 @@ Important Methods :
 
 9 .Types of Iterator in Streams : 
 
+10 .  takeWhile() : 
+       1. It returns the elements as long as the given predicate is true .
+       2. default Stream<T> takeWhile(Predicate<? super T> predicate) .
+       3. Eg :   Stream<String> stringStream = Stream.of("hello", "educative", "hi", "edpresso");
+                 Predicate<String> lengthPredicate = string -> string.length() >= 5;
+                 List<String> filteredStream = stringStream.takeWhile(lengthPredicate).collect(Collectors.toList());
+                 System.out.println("takeWhile output - " + filteredStream);
+
+
+
