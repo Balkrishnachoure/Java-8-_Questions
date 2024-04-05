@@ -75,6 +75,16 @@ Important Methods :
                  Predicate<String> lengthPredicate = string -> string.length() >= 5;
                  List<String> filteredStream = stringStream.takeWhile(lengthPredicate).collect(Collectors.toList());
                  System.out.println("takeWhile output - " + filteredStream);
+11. chars() : 
+      1.The chars() method is an instance method of the String class added in Java 9 .
+      2. public IntStream chars() ;
+      3. Return Type : IntStream ; 
+      4.  Eg :    String string = "hello-educative";
+                 // use the chars method to get a stream of char values
+                  IntStream codePointStream = string.chars();
+                 // convert the code points back to characters and print the output
+                  codePointStream.mapToObj(Character::toChars).forEach(System.out::println);
+           
 
 
 
