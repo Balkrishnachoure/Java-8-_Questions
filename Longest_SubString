@@ -1,1 +1,31 @@
+package com.example.demo;
+
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
+public class Demo2 {
+    public static String findLongestSubstring(String str) {
+        if (str == null || str.isEmpty()) {
+            return "";
+        }
+
+        String longestSubstring = IntStream.range(0, str.length())
+                .mapToObj(
+                         i -> IntStream.range(i, str.length())
+                        .takeWhile(j -> str.substring(i, j + 1).chars().distinct().count() == j - i + 1)
+                        .mapToObj(j -> str.substring(i, j + 1))
+                        .max((s1, s2) -> s1.length() - s2.length()) // Comparator to find max length String 
+                        .orElse(""))
+                .max((s1, s2) -> s1.length() - s2.length())
+                .orElse("");
+
+           return longestSubstring;
+    }
+
+    public static void main(String[] args) {
+        String input = "abcabcbb";
+        String longestSubstring = findLongestSubstring(input);
+        System.out.println("Longest substring without repeating characters: " + longestSubstring);
+    }
+}
 
