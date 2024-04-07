@@ -54,8 +54,9 @@ Questions on Consumer :
 
 10.Consumer with State: Write a program where a consumer is applied to a list of strings. The consumer should keep track of the longest string encountered so far and print it after processing all elements.
 
-Questions on Functions : 
 
+
+Questions on Functions : 
 Level 1 : 
 1.Write a Java 8 function that takes a list of integers and returns the sum of the squares of all even numbers in the list.
 
