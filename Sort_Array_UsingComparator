@@ -46,6 +46,7 @@ Class Demo
            // TreeMap<Integer, String > m = new TreeMap<>( (i1, i2) -> i2.compareTo(i1)) ;
         // Solution 3 :
              TreeMap<Integer, String > m = new TreeMap<>(Comparator.reverseOrder()) ;
+             TreeMap<Integer, String > m = new TreeMap<>(Comparator.naturalOrder()) ;
              m.put(2 ,"Bala") ;
              m.put(4 , "Aadil ") ;
              m.put(1 , "Abhay") ;
