@@ -1,0 +1,16 @@
+import java.util.*;
+import java.util.function.IntPredicate;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+public class Demo2 {
+
+    public static void main(String[] args) {
+       List<String> LL = Arrays.asList("Apple" , "Banana", "Orange", "Grape") ;
+       String subString ="an" ;
+       Predicate<String> predict = s -> s.contains(subString) ;
+      List<String> result =   LL.stream().filter(predict).toList() ;
+      System.out.print(result);
+
+    }
+}
