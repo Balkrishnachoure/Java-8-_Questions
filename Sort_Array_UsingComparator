@@ -1,1 +1,23 @@
 
+Class Demo 
+{
+    public static void main(String[] args )
+    {
+        List<Integer> L = Arrays.asList( 5 ,7,1,3,10,11) ;
+       
+       //Solution 1 :
+          Collections.sort( L, (i1 , i2) -> (i1>i2) ? -1 : (i1 <i2) ? 1 : 0) ;
+          System.out.print( L.toString()) ;
+
+       //Solution 2 : Using ConpareTO()
+         L.sort((i1, i2) -> i2.compareTo(i1));
+         System.out.print( L.toString()) ;
+        
+     //Solution 3 : Using Comparator.reverseOrder() and Comparator.naturalOrder()  :
+           L.sort(Comparator.reverseOrder()) ;
+           L.sort(Comparator.naturalOrder());
+           System.out.print( L.toString()) ;
+
+    }
+
+}
