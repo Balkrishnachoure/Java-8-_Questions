@@ -1,0 +1,25 @@
+package com.example.demo;
+
+import java.util.*;
+import java.util.function.IntPredicate;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+public class Demo2 {
+    public static void main(String[] args) {
+        String input = "12345";
+        Predicate<String> containsOnlDigit = str -> {
+            for (char c : str.toCharArray()) {
+                return Character.isDigit(c);
+            }
+            return true ;
+        };
+        if(containsOnlDigit.test(input))
+        {
+             System.out.print("The string contains only digits -- ") ;
+        }else {
+             System.out.print("The string do not contiains only digi -- ");
+        }
+    }
+}
