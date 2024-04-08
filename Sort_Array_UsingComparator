@@ -5,14 +5,14 @@ Class Demo
     {
 
 
-      //Section 1 : Sorting in List : 
+ //Section 1 : Sorting in List : 
         List<Integer> L = Arrays.asList( 5 ,7,1,3,10,11) ;
        
        //Solution 1 :
           Collections.sort( L, (i1 , i2) -> (i1>i2) ? -1 : (i1 <i2) ? 1 : 0) ;
           System.out.print( L.toString()) ;
 
-       //Solution 2 : Using ConpareTO()
+       //Solution 2 : Using CompareTO()
          L.sort((i1, i2) -> i2.compareTo(i1));
          System.out.print( L.toString()) ;
         
@@ -22,7 +22,9 @@ Class Demo
            System.out.print( L.toString()) ;
 
 // Note : Collections.sort()  only work for List in Colletions Framework : 
-   // Section 2 : Sorting in  and  TreeSet  : 
+
+
+// Section 2 : Sorting in  and  TreeSet  : 
           //Solution 1 :
             // TreeSet<Integer> m = new TreeSet<>( (i1, i2) -> (i1>i2) ? -1 : (i1 < i2)? 1:0) ;
          // Solution 2 :
@@ -35,7 +37,20 @@ Class Demo
                m.add(9) ;
                System.out.print(m.toString()) ;
 
+
+
 // Sections 3 : Sorting in TreeMap :
+          //Solution 1 :
+            //TreeMap<Integer,String> m = new TreeMap<>( (i1, i2) -> (i1>i2) ? -1 : (i1 < i2)? 1:0) ;
+         // Solution 2 :
+           // TreeMap<Integer, String > m = new TreeMap<>( (i1, i2) -> i2.compareTo(i1)) ;
+        // Solution 3 :
+             TreeMap<Integer, String > m = new TreeMap<>(Comparator.reverseOrder()) ;
+             m.put(2 ,"Bala") ;
+             m.put(4 , "Aadil ") ;
+             m.put(1 , "Abhay") ;
+             m.put(9 , "Naseer") ;
+            System.out.print(m.toString()) ;
 
 
     
