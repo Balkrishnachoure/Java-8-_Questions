@@ -1,1 +1,53 @@
 
+
+Class Demo 
+{
+ public static void main(String[] args) {
+        int[][] matrix1 = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };     
+        int[][] matrix2 = {
+            {9, 8, 7},
+            {6, 5, 4},
+            {3, 2, 1}
+        };
+        
+        int[][] result = multiply(matrix1, matrix2);
+        
+        System.out.println("Matrix 1:");
+        printMatrix(matrix1);
+        
+        System.out.println("\nMatrix 2:");
+        printMatrix(matrix2);
+
+        System.out.println("\nResult:");
+        printMatrix(result);
+    }
+  public static int[][] multiply(int[][] matrix1, int[][] matrix2) {
+        int numRows1 = matrix1.length;
+        int numCols1 = matrix1[0].length;
+        int numCols2 = matrix2[0].length;   
+        int[][] result = new int[numRows1][numCols2];      
+        IntStream.range(0, numRows1).parallel().forEach(i -> {
+            for (int j = 0; j < numCols2; j++) {
+                int sum = 0;
+                for (int k = 0; k < numCols1; k++) {
+                    sum += matrix1[i][k] * matrix2[k][j];
+                }
+                result[i][j] = sum;
+            }
+        });
+        
+        return result;
+    }
+    public static void printMatrix(int[][] matrix) {
+        for (int[] row : matrix) {
+            for (int val : row) {
+                System.out.print(val + " ");
+            }
+            System.out.println();
+        }
+    }
+}
