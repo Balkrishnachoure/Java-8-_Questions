@@ -84,6 +84,10 @@ Important Methods :
                   IntStream codePointStream = string.chars();
                  // convert the code points back to characters and print the output
                   codePointStream.mapToObj(Character::toChars).forEach(System.out::println);
+
+12. parallel() : 
+            1. By this we can divide the code into multiple stream which are Executed in parallel .
+            2. parallelStream() is used for Collection . ( eg : Storing Data in list and then reading it) .
            
 
 
