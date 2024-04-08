@@ -1,1 +1,21 @@
 
+import java.util.*;
+import java.util.function.IntPredicate;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+public class Demo2 {
+
+    public static void main(String[] args) {
+        List<Integer> L = Arrays.asList(1, 2, 3, 4, 5) ;
+       Predicate< List<Integer>> predict = LL -> {
+           for( int i =0 ; i< LL.size()-1; i++)
+           {
+           if( LL.get(i) > LL.get(i+1))
+           {return false ;}
+           }
+           return  true ;
+       } ;
+      System.out.println( predict.test(L));
+    }
+}
