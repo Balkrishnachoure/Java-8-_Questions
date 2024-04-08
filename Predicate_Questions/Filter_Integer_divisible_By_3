@@ -1,0 +1,20 @@
+package com.example.demo;
+
+import java.util.*;
+import java.util.function.IntPredicate;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+public class Demo2 {
+
+    public static void main(String[] args) {
+
+        List<Integer> L = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+        Predicate<Integer> predict = i -> i % 3 == 0;
+        List<Integer> fileterElements = L.stream().filter(predict).toList();
+
+        fileterElements.forEach(System.out::println);
+    }
+}
