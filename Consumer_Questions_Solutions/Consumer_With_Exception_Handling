@@ -1,0 +1,38 @@
+package com.example.demo;
+
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Consumer;
+import java.util.function.IntPredicate;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
+public class Demo2 {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, -3, 4, 5);
+         Consumer<Integer>  check =  num ->{
+             if(num<0)
+             {
+                 try {
+                     throw  new NegativeNumberException("Negative Number Found "+num) ;
+                 } catch (NegativeNumberException e) {
+                     throw new RuntimeException(e);
+                 }
+             }else{
+                  System.out.println("Processing : "+num);
+             }
+         } ;
+         for (int m : numbers)
+         {
+             check.accept(m);
+         }
+    }
+}
+class NegativeNumberException extends Exception{
+    NegativeNumberException(String message)
+    {
+        super(message);
+    }
+}
