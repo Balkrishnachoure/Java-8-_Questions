@@ -1,1 +1,91 @@
 
+Important Methods : 
+
+1. reduce() : Reducing is the repeated process of combining all elements.
+   Note : T reduce(T identity, BinaryOperator<T> accumulator);
+            Where, identity is initial value 
+            of type T and accumulator is a 
+            function for combining two values.
+
+
+
+3.  Methods in :
+   a.Predicate - test(T t) 
+   b.Consumer - accept(T t)
+   c.Supplier - T get()
+   d.Function -  R apply(T t) , 
+                 default <V> Function<V, R> andThen(Function<? super R, ? extends V> after) ,
+                 default <V> Function<V, R> compose(Function<? super V, ? extends T> before) ,
+                 static <T> Function<T, T> identity()
+
+4. limit() - is a short-circuiting operation.
+     Eg : Stream.iterate(0, i -> i + 1)
+           .filter(i -> i % 2 == 0)
+            .limit(10)
+              .forEach(System.out::println);
+5. boxed() : Stream<Integer> boxed()
+            It is an Intermidiate Operation .It is Lazy  .
+            It wraps primitive types to into an object .
+
+6. OptionalInt : It is a container Object/class which may or may not contains a int value .
+                 Be carefull while using (== and  .equals()) in case of OptionalInt instance .
+                 Eg: OptionalInt opInt = OptionalInt.of(45); 
+                    System.out.println("OptionalInt: "+ opInt.toString());  //[45]
+                    System.out.println("Value in OptionalInt = " + opInt.getAsInt());  // 45
+                Eg2 :    try { 
+                              OptionalInt opInt = OptionalInt.empty(); 
+                              System.out.println("OptionalInt:+ opInt.toString()); // OptionalInt.empty 
+                              System.out.println("Value in OptionalInt = "+ opInt.getAsInt()); // java.util.NoSuchElementException
+                              } catch (Exception e) {  System.out.println("Exception: " + e);  } 
+
+7. ifPresentOrElse(Consumer,Runnable) : 
+    1.It is the method of java.util.optional class.
+    2.It can be used only on the values of Optional Object . If the value is not present in Optional then the method performs the given 
+    empty based Runnable Empty Action .
+    3.public void ifPresentOrElse(Consumer<T> action, Runnable emptyAction) .
+    Eg 1:  
+        Optional<Integer> op = Optional.of(9455); 
+        System.out.println("Optional: " + op); 
+        op.ifPresentOrElse( (value) -> { System.out.println( "Value is present, its: "+ value); }, // output :  9455
+            () -> { System.out.println("Value is empty"); }); 
+   Eg 2:   
+        Optional<Integer> op = Optional.empty(); 
+        System.out.println("Optional: " + op);
+        try {   op.ifPresentOrElse(  (value) -> { System.out.println( "Value is present, its: "+ value); }, 
+                ()  -> { System.out.println("Value is empty"); });   //  output : Value is empty
+        }  catch (Exception e) { System.out.println(e); } 
+
+
+8 . Intstream.iterate()  : Introduce in java 8 and Changes made in Java 9 .
+     1. static IntStream iterate(int seed, IntUnaryOperator f) - In Java 8 this was introduce .
+       Where : seed - the initial element
+               f - a function to be applied to the previous element to produce a new element
+      2. static IntStream	iterate​(int seed, IntPredicate hasNext, IntUnaryOperator next) -  In Java 9 .
+         Where seed - the initial element
+               hasNext - a predicate to apply to elements to determine when the stream must terminate.
+               next - a function to be applied to the previous element to produce a new element
+        Eg :  Stream.iterate(0, i -> i <= 100, i -> 3 + i).forEach(i -> System.out.printf("%d,", i));
+
+9 .Types of Iterator in Streams : 
+
+10 .  takeWhile() : 
+       1. It returns the elements as long as the given predicate is true .
+       2. default Stream<T> takeWhile(Predicate<? super T> predicate) .
+       3. Eg :   Stream<String> stringStream = Stream.of("hello", "educative", "hi", "edpresso");
+                 Predicate<String> lengthPredicate = string -> string.length() >= 5;
+                 List<String> filteredStream = stringStream.takeWhile(lengthPredicate).collect(Collectors.toList());
+                 System.out.println("takeWhile output - " + filteredStream);
+11. chars() : 
+      1.The chars() method is an instance method of the String class added in Java 9 .
+      2. public IntStream chars() ;
+      3. Return Type : IntStream ; 
+      4.  Eg :    String string = "hello-educative";
+                 // use the chars method to get a stream of char values
+                  IntStream codePointStream = string.chars();
+                 // convert the code points back to characters and print the output
+                  codePointStream.mapToObj(Character::toChars).forEach(System.out::println);
+
+12. parallel() : 
+            1. By this we can divide the code into multiple stream which are Executed in parallel .
+            2. parallelStream() is used for Collection . ( eg : Storing Data in list and then reading it) .
+           
