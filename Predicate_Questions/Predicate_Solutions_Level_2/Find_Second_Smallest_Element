@@ -1,0 +1,21 @@
+package com.example.demo;
+
+import java.util.*;
+import java.util.function.IntPredicate;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
+public class Demo2 {
+
+    public static void main(String[] args) {
+
+      List<Integer> L =Arrays.asList(5,2,8,1,9,3,6,4,7) ;
+
+       Predicate<Integer> notSmall = x -> !x.equals( L.stream().min(Integer:: compareTo).get()) ;
+
+       Optional<Integer>  secondSmallest = L.stream().filter(notSmall).min(Integer::compareTo) ;
+      System.out.print(secondSmallest);
+    }
+}
