@@ -1,0 +1,42 @@
+package com.example.demo;
+
+import java.util.*;
+import java.util.function.IntPredicate;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
+public class Demo2 {
+
+    public static void main(String[] args) {
+
+       List<String> strings = Arrays.asList("MA","DA","M") ;
+
+       Predicate<String> predict = str -> {
+           int left = 0;
+           int right = str.length() - 1;
+           while (left < right) {
+               if (str.charAt(left) != str.charAt(right)) {
+                   return false;
+               }
+               left++;
+               right--;
+           }
+           return true;
+       };
+       // String Conacatenation
+       String concatenatedString = String.join("", strings) ;
+
+       boolean checkPalnidrome = predict.test(concatenatedString) ;
+
+
+        if (checkPalnidrome) {
+            System.out.print("Yes");
+        } else {
+            System.out.print("no");
+        }
+
+
+    }
+}
