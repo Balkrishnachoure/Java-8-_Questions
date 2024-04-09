@@ -1,0 +1,28 @@
+package com.example.demo;
+
+import java.util.*;
+import java.util.function.IntPredicate;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
+public class Demo2 {
+    public static void main(String[] args) {
+        List<String> wordList = Arrays.asList("listen", "silent", "hello", "world", "enlist", "inlets");
+        String wordToFindAnagrams = "listen";
+        Predicate<String>  isAnagram = word -> {
+            if(word.length() != wordToFindAnagrams.length())
+            {
+                return false  ;
+            }
+            char[] chars1 = word.toCharArray() ;
+            char[] chars2 = word.toCharArray() ;
+             Arrays.sort(chars1);
+             Arrays.sort(chars2) ;
+             return Arrays.equals(chars1 ,chars2) ;
+        } ;
+        List<String> L = wordList.stream().filter(isAnagram).toList() ;
+        System.out.print(L.toString());
+    }
+}
