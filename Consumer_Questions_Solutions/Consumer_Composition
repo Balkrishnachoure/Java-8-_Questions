@@ -26,6 +26,7 @@ public class Demo2 {
               }
          } ;
 
+        //  Apply Consumer in Sequence : 
          Consumer<List<String>> combinedConsumer = upperCaseConsumer.andThen(appendConsumer) ;
         combinedConsumer.accept(LL );
 
