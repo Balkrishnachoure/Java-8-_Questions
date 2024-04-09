@@ -1,1 +1,28 @@
 
+Claas Demo 
+{
+   Public static void main(String [] args) 
+   {
+     String str = "leetcodeisawesome" ;
+
+        String result =  str.chars().mapToObj(c ->(char)c)
+                            .collect(StringBuilder:: new,    // Using  StringBuilder to accumulate characters
+                            (sb, c) -> {
+                           if( "aeiou".indexOf(c) != -1 )
+                           {
+                             sb.append(c) ;
+                            }else if( sb.length() >0){
+                             sb.append('\n') ;
+                           }
+                           }
+                         ,StringBuilder:: append).
+                          toString().     // Convert StringBuilder to String
+                          lines().        // Split the result by newline, producing a Stream<String> of substrings
+                          max( (s1,s2) -> s1.length()-s2.length())  // Find the longest substring
+                         .orElse("");
+
+      System.out.print(result) ;
+
+   
+   }
+}
