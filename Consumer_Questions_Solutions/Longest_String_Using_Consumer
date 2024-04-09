@@ -1,0 +1,21 @@
+package com.example.demo;
+
+import java.util.*;
+import java.util.function.Consumer;
+public class Demo2 {
+    public static void main(String[] args) {
+        List<String> strings = Arrays.asList("Bala" , "Abhay", "NaseerKhan ");
+        Consumer< List<String>>  longestConsumerString = list -> {
+            String longestString ="" ;
+            for( String str : list)
+            {
+                if( str.length() > longestString.length())
+                {
+                    longestString =str ;
+                }
+            }
+          System.out.println("Longest String :" +longestString);
+        } ;
+        longestConsumerString.accept(strings);
+    }
+}
