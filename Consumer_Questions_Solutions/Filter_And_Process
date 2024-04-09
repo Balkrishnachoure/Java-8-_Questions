@@ -1,1 +1,21 @@
+package com.example.demo;
 
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.function.IntPredicate;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
+public class Demo2 {
+
+    public static void main(String[] args) {
+
+        List<String> LL =  Arrays.asList( "Apple" , "Banana", "Orange", "Apricot", "Grapes") ;
+
+        Consumer<String> upperCasePrinter = s-> System.out.println(s.toUpperCase());
+        LL.stream().filter(s-> !s.startsWith("A")).forEach(upperCasePrinter);
+
+    }
+}
