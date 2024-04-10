@@ -1,0 +1,17 @@
+package com.example.demo;
+
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+public class Demo2 {
+    public static void main(String[] args) {
+        List<String> numbers = Arrays.asList("Bala" ,"Abhay", "NaseerKhan");
+        Function<String ,Integer> stringLengthFunction = String::length;
+        // or Function<String ,Integer> stringLengthFunction = str -> str.length ;
+        List<Integer> LL = numbers.stream()
+                .map(stringLengthFunction).toList();
+
+        System.out.println(LL.toString());
+    }
+}
