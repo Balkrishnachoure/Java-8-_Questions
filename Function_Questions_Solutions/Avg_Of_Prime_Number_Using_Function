@@ -1,0 +1,29 @@
+package com.example.demo;
+
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+public class Demo2 {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(4, 6, 8, 10, 11);
+        Function<List<Integer>, Double> avgOfPrime = integers -> {
+            List<Integer> primeNum = integers.stream().filter(Demo2::isPrime).toList();
+            double sum = primeNum.stream().mapToInt(Integer::intValue).sum();
+            return primeNum.isEmpty() ? 0 : sum / primeNum.size();
+        };
+        double result = avgOfPrime.apply(numbers);
+        System.out.println("Average of prime numbers: " + result);
+    }
+    private static boolean isPrime(Integer integer) {
+        if (integer <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(integer); i++) {
+            if (integer % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
