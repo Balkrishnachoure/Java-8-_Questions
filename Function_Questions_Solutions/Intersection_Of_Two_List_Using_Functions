@@ -1,0 +1,25 @@
+public class Demo {
+	public static void main(String[] args) { 
+         List<Integer> List1 =  List.of(1,2,3,4,5) ;
+         List<Integer> List2= List.of(3,4,5,6,7,8)  ;
+   
+         //Solution : 1   
+         Function< List<Integer>, Function< List<Integer>, List<Integer>>> intersection1 = l1 -> 
+                    l2 -> l1.stream()
+        		         .distinct()
+        		         .filter(l2:: contains)
+        		         .collect(Collectors.toList()) ;
+
+         //Solution 2 : Using Lambda 
+         Function< List<Integer>, Function< List<Integer>, List<Integer>>> intersection2 = l1 -> 
+                  l2 -> l1.stream()
+                 .distinct()
+                 .filter( ele -> l2.stream().anyMatch( x -> x.equals(ele))		 )
+                 .collect(Collectors.toList()) ;
+          
+         List<Integer> intersectedList = intersection2.apply(List1).apply(List2) ;
+         System.out.println("Intersected List : " +intersectedList);	
+    }
+	
+	
+}
