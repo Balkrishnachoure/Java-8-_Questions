@@ -1,0 +1,20 @@
+import java.util.List;
+import java.util.function.Function;
+
+public class Demo {
+	public static void main(String[] args) {
+     
+		List<String>   L =  List.of("Bala", "Abhay", "Naseer Khan" ) ;
+		Function<List<String>,Long> countDistinctCharater =  list -> 
+            list.stream()
+				     .flatMapToInt(characterSequence -> characterSequence.chars())
+             .distinct()
+             .count();
+
+		Long distinctCount = countDistinctCharater.apply(L) ;
+		System.out.println("Distinct Charater Count : " +distinctCount);
+		
+    }
+	
+	
+}
