@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Function;
+
+public class Demo {
+	public static void main(String[] args) {      
+		 List<Integer> L = Arrays.asList(10, 20,30,40,50) ;
+ 
+		 double average = L.stream().mapToDouble(Integer :: doubleValue).average().orElse(0.0) ;
+		 
+		 Function<Integer, Boolean>  isGreaterThanAverage =  num ->num > average ; 
+		 
+		  List<Integer> result = filter(L ,isGreaterThanAverage) ;
+		  
+		  System.out.println("Elements Greater Than avg : " +result);
+
+    }
+	private static List<Integer> filter(List<Integer> l, Function<Integer, Boolean> isGreaterThanAverage) {
+		 List<Integer> result = new ArrayList<Integer>() ;
+		 for( int n : l )
+		 {
+			 if( isGreaterThanAverage.apply(n) )
+			 {
+				 result.add(n) ;
+			 }
+		 }
+				return result;
+	}
+	
+	
+}
