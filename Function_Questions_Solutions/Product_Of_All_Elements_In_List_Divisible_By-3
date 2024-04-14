@@ -1,0 +1,15 @@
+import java.util.List;
+import java.util.function.Function;
+
+public class Demo{
+	public static void main(String[] args) {
+		
+		 List<Integer> numbers = List.of(3, 6, 9, 12, 15);
+		 Function< List< Integer>, Integer> productDivisibleBytThree = numList ->
+		  numList.stream().filter(n -> n%3 == 0).reduce(1, (a,b) -> a*b ) ;
+		  
+		  System.out.println( "Product of No. divisible by Three :  " + productDivisibleBytThree.apply(numbers)  );
+		
+        
+			}
+}
