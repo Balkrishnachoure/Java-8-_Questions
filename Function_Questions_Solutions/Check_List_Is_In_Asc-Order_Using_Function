@@ -1,0 +1,13 @@
+public class Demo {
+	public static void main(String[] args) {
+
+
+		List<Integer>  list = List.of(1,2,3,4,5,6,7) ;	
+		//Solution 1 : Using Stream : 
+		Function<List<Integer> ,Boolean> ascendingFunction = li -> li.equals(li.stream().sorted().collect(Collectors.toList()));
+
+		System.out.println( "Is Ascending : " + ascendingFunction.apply(list)   );
+		
+			
+}
+}
