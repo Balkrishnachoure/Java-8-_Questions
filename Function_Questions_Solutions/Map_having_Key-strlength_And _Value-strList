@@ -1,0 +1,17 @@
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+public class Demo {
+	public static void main(String[] args) {       
+		 List<String> strings = Arrays.asList("apple", "banana", "orange", "kiwi", "pear");	 
+		 Function<String,Integer> lengthExtractor = String ::length ; 	 
+		 // or 
+		// Function<String,Integer> lengthExtractor = s -> s.length();
+		 
+		 Map<Integer, List<String>> lenghtMap = strings.stream()
+				 .collect(Collectors.groupingBy(lengthExtractor)) ;	 
+		 lenghtMap.forEach((length ,list) ->  System.out.println(length +" : " +list ));
+    }
+
+}
