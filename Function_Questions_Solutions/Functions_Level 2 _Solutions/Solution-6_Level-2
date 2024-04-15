@@ -1,0 +1,25 @@
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+public class Demo2 {
+    public static void main(String[] args) {
+           // Sorting based on the number of vowel a string contains :
+        List<String> strings = Arrays.asList("helloua", "worldeioua", "java", "programming", "example");
+        Function<String , Integer> countVowel= s -> {
+            int count =0 ;
+            for(char c : s.toLowerCase().toCharArray()) {
+                if( "aeiou".indexOf(c) != -1)
+                { count++ ; }
+            }
+            return count  ;
+        }  ;
+        strings.sort(Comparator.comparingInt(countVowel::apply));
+      // or : strings.sort(Comparator.comparingInt(s->countVowel.apply(s)));
+         strings.forEach(System.out:: println);
+    }
+
+}
