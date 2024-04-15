@@ -1,0 +1,18 @@
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+public class Demo2 {
+    public static void main(String[] args) {
+
+        List<String> strings = List.of("abc123", "def456", "ghi", "jklmno");
+
+        Function<String, Boolean> containDigit = str ->str.chars().anyMatch(Character::isDigit) ;
+
+             boolean result = strings.stream().allMatch(containDigit::apply) ;
+
+          System.out.println("All string Contains  single Digit : " +result) ;
+    }
+
+}
