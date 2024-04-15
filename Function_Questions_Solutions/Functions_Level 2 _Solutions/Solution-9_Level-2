@@ -1,0 +1,33 @@
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+public class Demo2 {
+    public static void main(String[] args) {
+        List<Integer> nums = Arrays.asList(2, 7, 11, 15);
+        int target = 9;
+        List<Integer> indices = findTwoSumIndices(nums, target);
+        System.out.print("Index at : "  +indices.get(0) +" Index at  : "+indices.get(1));
+    }
+
+    private static List<Integer> findTwoSumIndices(List<Integer> nums, int target) {
+        Map<Integer, Integer> map =new HashMap<>() ;
+        for( int i =0 ; i<nums.size() ;i++)
+        {
+            map.put( nums.get(i) ,i ) ;
+        }
+        Function<Integer ,Integer>  findIndex =  n-> map.getOrDefault(n, -1) ;
+        List<Integer> result = new ArrayList<>() ;
+        for(int i=0 ;i < nums.size() ;i++)
+        {
+           int temp = target -nums.get(i) ;
+          if( map.containsKey(temp) && map.get(temp) != i)
+          {   result.add(i) ;
+              result.add(findIndex.apply(temp)) ;
+              break ;}
+        }
+        return result;
+    }
+}
