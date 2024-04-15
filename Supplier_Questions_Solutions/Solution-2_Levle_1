@@ -1,0 +1,19 @@
+import java.time.LocalTime;
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+public class Demo2 {
+    public static void main(String[] args) {
+     Supplier<String>  timeSupplier = () ->
+     {
+         LocalTime now =  LocalTime.now() ;
+         int secondSinceMIdNight = now.toSecondOfDay() ;
+         return secondSinceMIdNight%2 ==0  ? "Even" :"Odd" ;
+     } ;
+     System.out.print("Curent Time : "+timeSupplier.get() );
+    }
+
+}
