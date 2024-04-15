@@ -1,0 +1,23 @@
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+public class Demo2 {
+    public static void main(String[] args) {
+
+        List<String> strings = List.of("racecar", "madam", "hello", "level", "world", "civic");
+        Function<String ,Boolean>  isPalindrome =  s->
+        {
+             String reversed = new StringBuffer(s).reverse().toString() ;
+             return  s.equals(reversed) ;
+        } ;
+
+        Optional<String>  longestPalindrome = strings.stream()
+                .filter(isPalindrome :: apply)
+                .max( (s1,s2) -> s1.length()-s2.length() ) ;
+
+          longestPalindrome.ifPresent( palindrome -> System.out.println("Longest Palindrome : " +palindrome));
+        }
+}
