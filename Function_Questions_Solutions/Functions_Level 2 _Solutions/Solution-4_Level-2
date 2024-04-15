@@ -1,0 +1,21 @@
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+public class Demo2 {
+    public static void main(String[] args) {
+
+      // Creating Map with Key - firstCharacter of String and value - list of all String starting with that character :
+        List<String> strings = Arrays.asList("apple", "banana", "apricot", "blueberry", "avocado", "orange");
+        Map<Character ,List<String>> result = new HashMap<>()  ;
+
+        Function<String , Character>  getFirstChar  = str ->  Character.toUpperCase(str.charAt(0)) ;
+
+        strings.forEach( str -> result.computeIfAbsent( getFirstChar.apply(str), k-> new ArrayList<>()).add(str));
+
+        result.forEach( (key , value) -> System.out.println( key +" : " +value));
+    }
+
+}
