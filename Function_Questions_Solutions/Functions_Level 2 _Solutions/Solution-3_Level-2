@@ -1,0 +1,37 @@
+package com.example.demo;
+
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+public class Demo2 {
+
+    public static void main(String[] args) {
+
+        List<Integer> inputList = List.of(5, 10, 20);
+
+        int maxInt = inputList.stream().mapToInt(Integer::intValue).max().orElse(0) ;
+
+        Function<Integer ,List<Integer>> fibonacciNumber = n-> {
+
+            List<Integer> fibonnaciSequence = new ArrayList<>() ;
+            int a =0 , b=1  ;
+            while(a<= n)
+            {
+                fibonnaciSequence.add(a) ;
+                int temp = a ;
+                a =b ;
+                b= temp +a ;
+            }
+           return fibonnaciSequence ;
+        } ;
+
+       List<Integer> result =  fibonacciNumber.apply(maxInt) ;
+        result.forEach(System.out:: print );
+
+
+    }
+
+}
