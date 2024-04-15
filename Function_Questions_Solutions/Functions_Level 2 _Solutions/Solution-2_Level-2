@@ -6,6 +6,7 @@ import java.util.stream.IntStream;
 
 public class Demo2 {
     public static void main(String[] args) {
+
          // Question : Finding Longest Palindrome using function : 
         List<String> strings = List.of("racecar", "madam", "hello", "level", "world", "civic");
         Function<String ,Boolean>  isPalindrome =  s->
