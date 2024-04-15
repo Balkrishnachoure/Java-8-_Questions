@@ -75,7 +75,7 @@ Level 2 :
 Questions on Supplier  : 
 Level 1 :
 1.Write a Supplier that returns a random integer between 1 and 100.
-2.mplement a Supplier that returns "Even" if the current time is an even number of seconds since midnight, and "Odd" otherwise.
+2.Implement a Supplier that returns "Even" if the current time is an even number of seconds since midnight, and "Odd" otherwise.
 3.Explain the concept of Supplier memoization and provide an example of how it can be implemented.
 4.How would you ensure thread safety when using a Supplier in a multi-threaded environment? Provide strategies or techniques to achieve this.
 
