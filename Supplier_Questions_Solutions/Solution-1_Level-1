@@ -1,0 +1,17 @@
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+public class Demo2 {
+    public static void main(String[] args) {
+     Supplier<Integer>  randomIntSupplier = () ->
+     {
+         Random random =new Random() ;
+         return random.nextInt(100)+1 ;
+     } ;
+    int  randomNumber = randomIntSupplier.get() ;
+    System.out.print("Random Int form 1 to 100 are :" +randomNumber);
+    }
+}
