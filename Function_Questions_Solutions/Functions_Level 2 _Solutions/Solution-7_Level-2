@@ -1,0 +1,21 @@
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+public class Demo2 {
+    public static void main(String[] args) {
+         // Finding the nth smallest number in List :
+        List<Integer> numbers = Arrays.asList(3, 1, 4, 1, 5, 9, 2, 6, 5, 3);
+        int nthNumber =3 ;
+
+        Function<List<Integer> ,Integer> nthSmallest = integer ->
+                integer.stream().sorted().skip( nthNumber-1).findFirst().
+                        orElseThrow( () -> new IllegalArgumentException("List Too Short")) ;
+
+          int numberIs = nthSmallest.apply(numbers) ;
+          System.out.println("Nth Smallest Numebe  is :" +numberIs);
+    }
+
+}
