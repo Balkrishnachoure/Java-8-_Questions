@@ -13,6 +13,10 @@ Class Demo
         Integer[] intersection = Arrays.stream(array1)
                 .filter(Arrays.asList(array2)::contains)
                 .toArray(Integer[]::new);
+         //or
+       Integer [] intersection =Arrays.stream(array1)
+                               .filter(ele -> Arrays.asList(array2).contains(ele)) 
+                               .toArray(Integer[] :: new) ;
 
         // Approach 2: Using Streams and collect with Set
         Set<Integer> set1 = new HashSet<>(Arrays.asList(array1));
