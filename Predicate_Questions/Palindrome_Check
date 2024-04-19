@@ -15,5 +15,8 @@ public class Demo2 {
         } else {
             System.out.print("Not Palindorme");
         }
+   // OR 
+     System.out.println( isPalindrome.test(str) ? "Palindrome" : "Not Palindrome") ;
+
     }
 }
