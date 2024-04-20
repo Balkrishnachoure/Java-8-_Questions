@@ -22,7 +22,7 @@ Questions on Predicate :
 6.Create a Java 8 program to check if a given string contains only digits using predicates.
 7.Write a Java 8 program to filter a list of strings to find all strings starting with a vowel using predicates.
 8.Implement a Java 8 program to find the average of all even numbers in a list using predicates.
-9.Create a Java 8 program to check if a given list of integers is sorted in non-decreasing order using predicates.
+9.Create a Java 8 program to check if a given list of integers is sorted in non-decreasing(Ascending Order) order using predicates.
 10.Write a Java 8 program to filter a list of strings to find all strings containing a specific substring using predicates.
 
 Level:2
