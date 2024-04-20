@@ -23,6 +23,9 @@ Claas Demo
 
       System.out.print(result) ;
 
+// lines() : lines() will split the string into lines based on newline characters ('\n'). 
+//            This is useful for further processing each line individually
+
    
    }
 }
