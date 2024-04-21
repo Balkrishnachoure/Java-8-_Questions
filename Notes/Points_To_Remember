@@ -89,3 +89,5 @@ Important Methods :
             1. By this we can divide the code into multiple stream which are Executed in parallel .
             2. parallelStream() is used for Collection . ( eg : Storing Data in list and then reading it) .
            
+
+13. All Collectors Methods : 
