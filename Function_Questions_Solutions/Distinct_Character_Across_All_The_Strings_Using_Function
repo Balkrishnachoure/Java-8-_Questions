@@ -7,7 +7,7 @@ public class Demo {
 		List<String>   L =  List.of("Bala", "Abhay", "Naseer Khan" ) ;
 		Function<List<String>,Long> countDistinctCharater =  list -> 
             list.stream()
-				     .flatMapToInt(characterSequence -> characterSequence.chars())
+	 .flatMapToInt(characterSequence -> characterSequence.chars())
              .distinct()
              .count();
 
