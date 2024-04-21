@@ -12,6 +12,10 @@ public class Demo {
 		 Map<Integer, List<String>> lenghtMap = strings.stream()
 				 .collect(Collectors.groupingBy(lengthExtractor)) ;	 
 		 lenghtMap.forEach((length ,list) ->  System.out.println(length +" : " +list ));
+
+// Note : Collectors.groupingBy() :  IT is used for grouping objects by some property and storing results in a Map instance.
+// static <T,K> Collector<T,?,Map<K,List<T>>>  groupingBy(Function<? super T,? extends K> classifier)
+
     }
 
 }
