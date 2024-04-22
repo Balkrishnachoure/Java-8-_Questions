@@ -1,0 +1,40 @@
+public class Demo 
+{
+public static void main(String[] args) {
+       
+        List<Transaction> transactions = Arrays.asList(
+                new Transaction("credit", 100),
+                new Transaction("debit", 50),
+                new Transaction("credit", 200),
+                new Transaction("debit", 75),
+                new Transaction("credit", 150)
+        );
+
+ // Group transactions by type and calculate sum of amounts
+        Map<String, Integer> sumOfAmountsByType = transactions.stream()
+                .collect(Collectors.groupingBy(Transaction::getType,
+                        Collectors.summingInt(Transaction::getAmount)));
+
+        // Print the results
+        sumOfAmountsByType.forEach((type, sum) ->
+                System.out.println("Sum of " + type + " amounts: " + sum));
+    }
+
+ static class Transaction {
+        private String type;
+        private int amount;
+
+        public Transaction(String type, int amount) {
+            this.type = type;
+            this.amount = amount;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public int getAmount() {
+            return amount;
+        }
+    }
+}
