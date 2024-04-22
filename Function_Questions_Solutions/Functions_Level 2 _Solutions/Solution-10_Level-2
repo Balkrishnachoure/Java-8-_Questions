@@ -12,6 +12,11 @@ public class Demo2 {
 
              boolean result = strings.stream().allMatch(containDigit::apply) ;
 
+ // or 
+     Function<List<String>, Boolean> containDigit = list -> {
+                list.stream().allMatch(str-> chars.anyMatch(Character::isDigit));
+ } ; 
+
           System.out.println("All string Contains  single Digit : " +result) ;
     }
 
