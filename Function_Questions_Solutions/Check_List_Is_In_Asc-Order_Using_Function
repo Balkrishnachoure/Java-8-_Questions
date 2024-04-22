@@ -7,6 +7,8 @@ public class Demo {
 		Function<List<Integer> ,Boolean> ascendingFunction = li -> li.equals(li.stream().sorted().collect(Collectors.toList()));
 
 		System.out.println( "Is Ascending : " + ascendingFunction.apply(list)   );
+
+          //  Note : You can check Whether  2 lists are Equal or not by using .equals() method . 
 		
 			
 }
