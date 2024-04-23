@@ -13,7 +13,7 @@ General Questions Java 8  :
 11.Sort the array in descending and Ascending order  using Comparator in Java 8 streams (In List,TreeSet,TreeMap) .
 12. Make child Thread and Parent Thread using Anonymous Inner Class and Lambda Expression .
 13.You have a Table having Columns Transaction type having Credit and Debit only , and Amount . Create Single Query to find the total  Sum of  Credit and Debit ? 
-
+14. Sort the map based on value .
 Questions on Predicate : 
 1.Write a Java 8 program to check if a given string is a palindrome using predicates.
 2.Implement a Java 8 program to find all prime numbers in a given range using predicates.
