@@ -1,6 +1,6 @@
 
 
-Some Very Basic Question Java 8 : 
+Some Very Basic Questions Java 8 : 
 1.Given a list of integers, find out all the numbers starting with 1 using Stream functions?
 2.How to find duplicate elements in a given integers list in java using Stream functions?
 3.Given a list of integers, find the maximum value element present in it using Stream functions?
