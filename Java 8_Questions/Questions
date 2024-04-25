@@ -1,4 +1,18 @@
 
+
+Some Very Basic Question Java 8 : 
+1.Given a list of integers, find out all the numbers starting with 1 using Stream functions?
+2.How to find duplicate elements in a given integers list in java using Stream functions?
+3.Given a list of integers, find the maximum value element present in it using Stream functions?
+4.Given a String, find the first non-repeated character in it using Stream functions?
+5.Given a String, find the first repeated character in it using Stream functions?
+6.Given a list of integers, sort all the values present in it in descending order using Stream functions?
+7.How to use map to convert object into Uppercase in Java 8?
+8.How to convert a List of objects into a Map by considering duplicated keys and store them in sorted order?
+9.How to count each element/word from the String ArrayList in Java8?
+10.How to find only duplicate elements with its count from the String ArrayList in Java8?
+11.How to check if list is empty in Java 8 using Optional, if not null iterate through the list and print the object?
+
 General Conceptual Questions Java 8  : 
 
 1.Write a Java 8 program to find the intersection of two arrays.
