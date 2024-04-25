@@ -9,7 +9,7 @@ public class Demo {
         map.put("Banana", 20);
         map.put("Orange", 30);
         map.put("Grapes", 40);
-
+--------------
         // Solution 1 :  Sorting the map by values in ascending order
         Map<String, Integer> sortedMap = map.entrySet()
                 .stream()
@@ -27,6 +27,13 @@ public class Demo {
                 .stream()
                 .sorted((entry1, entry2) -> entry1.getValue().compareTo(entry2.getValue()))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,LinkedHashMap::new));
+-------------
+    # If We want to Use Default Map : 
+               Map<String, Integer> sortedMap = map.entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByValue())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+
   
         // Displaying the sorted map
         sortedMap.forEach((key, value) -> System.out.println(key + " : " + value));
