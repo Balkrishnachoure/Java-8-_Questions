@@ -28,7 +28,7 @@ public class Demo {
                 .sorted((entry1, entry2) -> entry1.getValue().compareTo(entry2.getValue()))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,LinkedHashMap::new));
 -------------
-    # If We want to Use Default Map : 
+    # If We want to Use Default Map  and not LinkedHashMap : 
                Map<String, Integer> sortedMap = map.entrySet()
                 .stream()
                 .sorted(Map.Entry.comparingByValue())
