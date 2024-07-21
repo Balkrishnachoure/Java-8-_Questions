@@ -15,12 +15,16 @@ public class Demo {
                 .stream()
                 .sorted(Map.Entry.comparingByValue())
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, LinkedHashMap::new));
-        // Solution 1 : Descending Order : 
-       Map<String, Integer> sortedMap = map.entrySet()
-                .stream()
-                .sorted(Comparator.reverseOrder())
-                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, LinkedHashMap::new));
-    
+        // Solution 1 : Descending Order  Based on Key : 
+      Map<String, Integer> sortedMap = map.entrySet()
+        .stream()
+        .sorted(Map.Entry.<String, Integer>comparingByKey(Comparator.reverseOrder()))
+        .collect(Collectors.toMap(
+                Map.Entry::getKey,
+                Map.Entry::getValue,
+                (e1, e2) -> e1, // Merge function to handle duplicates, not necessary here
+                LinkedHashMap::new // Collecting to LinkedHashMap to maintain order
+        ));
 
      Solution 2 : In Ascending Order : 
        Map<String, Integer> sortedMap = map.entrySet()
