@@ -15,6 +15,8 @@ public class Demo {
                 .stream()
                 .sorted(Map.Entry.comparingByValue())
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, LinkedHashMap::new));
+
+
         // Solution 1 : Descending Order  Based on Key : 
       Map<String, Integer> sortedMap = map.entrySet()
         .stream()
