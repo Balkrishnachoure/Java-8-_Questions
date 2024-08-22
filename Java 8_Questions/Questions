@@ -18,7 +18,7 @@ General Conceptual Questions Java 8  :
 
 1.Write a Java 8 program to find the intersection of two arrays.
 2.Implement a method in Java 8 to find the nth Fibonacci number using streams.
-3.Create a program to find the kth largest element in an array using Java 8 streams.
+3.Create a program to find the kth largest element in an array using Java 8 streams. (Eg: 2nd largest ,3rd largest)
 4.Write a Java 8 program to implement a binary search algorithm.
 5.Develop a program to reverse a string using Java 8 streams.
 6.Implement a method in Java 8 to generate a list of prime numbers up to a given limit.
