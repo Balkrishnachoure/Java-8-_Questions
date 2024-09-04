@@ -7,9 +7,13 @@ class Demo
     String str = "Hello, world!";
 
    // Solution : 
-              return Stream.of(input.split(""))
-                     .sorted((a, b) -> -1) // Sort in reverse order
-                     .collect(Collectors.joining());
+                public static String reverseString(String input) {
+        return input.chars()
+                    .mapToObj(c -> (char) c)
+                    .sorted(Collections.reverseOrder())
+                    .map(String::valueOf)
+                    .collect(Collectors.joining());
+    }
 
 
    // Solution:1 Using String Builder : 
