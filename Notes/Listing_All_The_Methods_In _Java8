@@ -1,1 +1,25 @@
+ ### 1. java.util.function Package (Functional Interfaces) : 
 
+1.Function<T, R>: apply()
+2.Predicate<T>: test(), and(), or(), negate()
+3.Consumer<T>: accept(), andThen()
+4.Supplier<T>: get()
+5.BiFunction<T, U, R>: apply()
+6.BiPredicate<T, U>: test()
+7.UnaryOperator<T>: apply()
+8.BinaryOperator<T>: apply()
+
+### 2. java.util.stream Package (Stream API)
+
+Stream<T>:
+1.filter(), map(), flatMap()
+2.forEach(), forEachOrdered()
+3.collect(), toArray()
+4.reduce()
+5.sorted()
+6.distinct()
+7.count(), sum(), max(), min(), average()
+8.anyMatch(), allMatch(), noneMatch()
+9.findFirst(), findAny()
+10.skip(), limit()
+11.concat(), of(), builder()
