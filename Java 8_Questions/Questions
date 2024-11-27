@@ -14,6 +14,7 @@ Some Very Basic Questions Java 8 :
 11.How to check if list is empty in Java 8 using Optional, if not null iterate through the list and print the object?
 12.Java 8 programme to find te prime number in range 1-100 ? 
 13.Given the list of Strings , find the String with max length ?  (Eg :Arrays.asList("Alice", "Bob", "Charlie", "David");)
+14.Merge two unsorted array in single sorted array without duplicates using java 8 ?
 
 General Conceptual Questions Java 8  : 
 
