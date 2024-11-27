@@ -17,6 +17,7 @@ Some Very Basic Questions Java 8 :
 14.Java 8 programme to find te prime number in range 1-100 ? 
 15.Given the list of Strings , find the String with max length ?  (Eg :Arrays.asList("Alice", "Bob", "Charlie", "David");)
 16.Merge two unsorted array in single sorted array without duplicates using java 8 ?
+17. Reverse an Integer Array ? 
 
 General Conceptual Questions Java 8  : 
 
